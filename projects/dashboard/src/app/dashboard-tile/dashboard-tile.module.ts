@@ -5,24 +5,17 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { DashboardTileComponent } from './dashboard-tile.component';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    NgxChartsModule
-  ],
-  declarations: [
-    DashboardTileComponent
-  ],
-  exports: [
-    DashboardTileComponent
-  ],
-  entryComponents: [
-    // TODO: Add DashboardTileComponent
-  ]
+  imports: [CommonModule, NgxChartsModule],
+  declarations: [DashboardTileComponent],
+  exports: [DashboardTileComponent],
+  entryComponents: [DashboardTileComponent],
 })
-export class DashboardTileModule { 
-
+export class DashboardTileModule {
   constructor(private injector: Injector) {
-    // TODO: Wrap DashboardTileComponent as a web component and register it
+    const tileElm = createCustomElement(DashboardTileComponent, {
+      injector: this.injector,
+    });
+    console.log('hiiiiii');
+    customElements.define('dashboard-tile', tileElm);
   }
-
 }

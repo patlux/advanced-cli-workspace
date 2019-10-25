@@ -14,7 +14,8 @@
     "copy:legacy": "cpr dist/external/main.legacy.js projects/flight-app/src/assets/external-dashboard-tile.legacy.bundle.js -o",
     "copy:ce:modern": "npm run copy:modern && npm run copy:legacy",
     "registry:start": "verdaccio",
-    "registry:adduser": "npm adduser --registry http://localhost:4873/"
+    "registry:adduser": "npm adduser --registry http://localhost:4873/",
+    "npx-build-plus:copy-assets": "node projects/dashboard/copy-wc-polyfill.js"
   },
   "private": true,
   "dependencies": {
