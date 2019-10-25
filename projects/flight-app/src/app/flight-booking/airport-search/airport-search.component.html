@@ -1,0 +1,5 @@
+<div *ngIf="airports$ | async as airports">
+  <div *ngFor="let airport of airports">
+    {{ airport }}
+  </div>
+</div>
