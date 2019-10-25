@@ -22,6 +22,12 @@
       ],
       "@my/logger-lib": [
         "projects/logger-lib/src/public_api"
+      ],
+      "passenger-api": [
+        "dist/passenger-api"
+      ],
+      "passenger-api/*": [
+        "dist/passenger-api/*"
       ]
     }
   }

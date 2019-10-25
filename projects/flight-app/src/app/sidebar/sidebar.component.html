@@ -2,7 +2,7 @@
   <div class="logo">
     <a class="simple-text">
       <div class="logo-img">
-        <img src="../../assets/img/angular2-logo.png" alt="">
+        <img src="../../assets/img/angular2-logo.png" alt="" />
       </div>
       Flight42
     </a>
@@ -22,17 +22,17 @@
       </a>
     </li>
 
-    <!--
     <li>
-        <a routerLink="passenger-search">
-            <i class="ti-user"></i>
-            <p>Passengers</p>
-        </a>
+      <!-- FIXME: wrong path: -->
+      <!-- <a routerLink="passenger-search"> -->
+      <a routerLink="flight-booking/passenger-search">
+        <i class="ti-user"></i>
+        <p>Passengers</p>
+      </a>
     </li>
--->
 
     <li routerLinkActive="active">
-      <a [routerLink]="[{outlets: { aux: 'basket'  }}]">
+      <a [routerLink]="[{ outlets: { aux: 'basket' } }]">
         <i class="ti-shopping-cart"></i>
         <p>Basket</p>
       </a>
@@ -46,6 +46,5 @@
         </a>
         </li>
     -->
-
   </ul>
 </div>

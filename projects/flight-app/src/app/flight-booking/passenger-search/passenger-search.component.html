@@ -1,3 +1,9 @@
-<p>
-  passenger-search works!
-</p>
+<div *ngIf="passengers$ | async as passengers">
+  <div *ngFor="let passenger of passengers">
+    <p>
+      {{ passenger.firstName }} {{ passenger.name }} ({{
+        passenger.bonusMiles
+      }})
+    </p>
+  </div>
+</div>
