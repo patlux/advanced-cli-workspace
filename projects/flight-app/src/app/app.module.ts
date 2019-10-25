@@ -15,6 +15,13 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SharedModule } from './shared/shared.module';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoggerModule } from '@my/logger-lib';
+import { LogFormatterService } from 'projects/logger-lib/src/lib/log-formatter.service';
+
+class CustomLogFormatterService extends LogFormatterService {
+  format(message: string): string {
+    return `[CustomLog]: ${message}`;
+  }
+}
 
 @NgModule({
   imports: [
@@ -28,7 +35,10 @@ import { LoggerModule } from '@my/logger-lib';
     FlightApiModule.forRoot(),
     SharedModule.forRoot(),
     RouterModule.forRoot([...APP_ROUTES], { ...APP_EXTRA_OPTIONS }),
-    LoggerModule.forRoot({ enableDebug: true }),
+    LoggerModule.forRoot({
+      enableDebug: true,
+      logFormatterService: CustomLogFormatterService,
+    }),
   ],
   declarations: [
     AppComponent,
